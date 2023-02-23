@@ -1,4 +1,5 @@
 import React from 'react';
+import PlantCard from '../../components/PlantCard/PlantCard'
 
 interface Plant {
   name: string;
@@ -27,8 +28,8 @@ const PlantList: React.FC<Props> = (props) => {
 
       <ul>
         {props.plants.map((plant) => (
-          <li key={plant._id}>
-            {plant.name}
+          <li key={plant.name}>
+            <PlantCard plant={plant} />
           </li>
         ))}
       </ul>
