@@ -16,18 +16,18 @@ enum Water {
 }
 
 interface Props {
-  plants: Plant[];
+  plant: Plant;
 }
 
-const PlantList: React.FC<Props> = (props) => {
+const PlantList: React.FC<{ plants: Plant[] }> = ({ plants }) => {
   return (
     <main className="list">
       <h1>PLANT LIST</h1>
 
-      {!props.plants.length && <h2>Oops! No plants here!</h2>}
+      {!plants.length && <h2>Oops! No plants here!</h2>}
 
       <ul>
-        {props.plants.map((plant) => (
+        {plants.map((plant) => (
           <li key={plant.name}>
             <PlantCard plant={plant} />
           </li>

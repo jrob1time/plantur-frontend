@@ -1,6 +1,18 @@
 /* ---------===== custom props ====--------- */
 
+export interface Plant {
+  name: string;
+  species: string;
+  light: string;
+  water: Water.OTHER;
+}
 
+enum Water {
+  LIGHT = 'Light',
+  MODERATE = 'Moderate',
+  GENEROUS = 'Generous',
+  OTHER = 'Moderate'
+}
 
 /* ---------===== auth models =====--------- */
 

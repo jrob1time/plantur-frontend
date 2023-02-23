@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 
 interface Props {
-  name: string;
-  species: string;
-  light: string;
-  water: Water.OTHER;
+  plant: {
+    name: string;
+    species: string;
+    light: string;
+    water: Water.OTHER;
+  };
 }
 enum Water {
   LIGHT = 'Light',
@@ -13,14 +15,16 @@ enum Water {
   OTHER = 'Moderate'
 }
 
-const PlantCard: FC<Props> = ({ name, species, light, water }) => {
+
+const PlantCard: FC<Props> = ({ plant }) => {
+  console.log(plant);
+  
   return (
     <li>
       <section>
         <button>X</button>
       </section>
-      <h2>{name}</h2>
-      <p>{`${species} and ${light} and ${water}`}</p>
+      <h2>{plant.name}</h2>
     </li>
   );
 };
