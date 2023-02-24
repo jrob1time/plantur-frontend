@@ -18,16 +18,13 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as plantService from './services/plantService';
 
-// stylesheets
-import './App.css'
-
 // types
-import { User } from './types/models'
+import { User, Plant } from './types/models'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
 
-  const [plants, setPlants] = useState([]);
+  const [plants, setPlants] = useState<Plant[]>([]);
 
   useEffect(() => {
     const fetchPlants = async () => {
@@ -37,7 +34,6 @@ function App(): JSX.Element {
     fetchPlants();
   }, []);
 
-  
   const [user, setUser] = useState<User | null>(authService.getUser())
 
   const handleLogout = (): void => {

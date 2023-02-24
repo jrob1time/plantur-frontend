@@ -5,6 +5,18 @@ const index = async (): Promise<any> => {
   return res.json();
 };
 
+async function create(formData: any): Promise<any> {
+  const res: Response = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  });
+  return res.json();
+}
+
 export {
   index,
+  create
 };

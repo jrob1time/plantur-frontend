@@ -1,6 +1,7 @@
 import React from 'react';
 import PlantCard from '../../components/PlantCard/PlantCard'
 
+
 interface Plant {
   name: string;
   species: string;
