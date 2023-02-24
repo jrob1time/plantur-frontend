@@ -16,7 +16,8 @@ async function create(formData: any): Promise<any> {
   return res.json();
 }
 
+
 export {
   index,
-  create
-};
+  create,
+}

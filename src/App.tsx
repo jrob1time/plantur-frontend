@@ -50,22 +50,16 @@ function App(): JSX.Element {
   const handleAddPlant = async (data: any): Promise<void> => {
     const newPlant: Plant = await plantService.create(data);
     setPlants([newPlant, ...plants]);
-    navigate('/plants');
+    navigate('/plants/new');
   };
 
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path='/' element={<Landing />} />
-        <Route path='/plant' element={
-          <PlantList
-            plants={plants}
-          />
-        } />
-          <Route path='/plants/new' element={
-            <NewPlant handleAddPlant={handleAddPlant} />
-          } />
+        <Route path="/" element={<Landing user={user} />} />
+        <Route path='/plants' element={<PlantList plants={plants}/>} />
+        <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />} />
         <Route
           path="/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

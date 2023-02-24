@@ -9,11 +9,10 @@ interface Plant {
   name: string
   species: string
   light: string
-  water: string
+  water: 'Light' | 'Moderate' | 'Generous'
 }
 
 const NewPlant: React.FC<NewPlantProps> = (props) => {
-
   const [form, setForm] = useState<Plant>({
     name: '',
     species: '',
@@ -21,7 +20,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
     water: 'Moderate',
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setForm(prevState => ({
       ...prevState,
@@ -36,14 +35,14 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
       name: '',
       species: '',
       light: '',
-      water: 'moderate',
+      water: 'Moderate',
     })
   }
 
   return (
     <main className="new">
       <h1>NEW PLANT</h1>
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -90,11 +89,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
           <option value="Generous">Generous</option>
         </select>
 
-        <form autoComplete="off" onSubmit={handleSubmit}>
-  {/* form fields */}
-  <button type="submit">SUBMIT</button>
-</form>
-        
+        <button type="submit">SUBMIT</button>
       </form>
     </main>
   )
