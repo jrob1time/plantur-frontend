@@ -27,13 +27,15 @@ const PlantList: React.FC<{ plants: Plant[] }> = ({ plants }) => {
       {!plants.length && <h2>Oops! No plants here!</h2>}
 
       <ul>
-      {plants.map((plant) => (
-        <PlantCard
-          key={plant.name}
-          plant={plant}
-        />
-      ))}
-    </ul>
+        {plants.map((plant) => (
+          <PlantCard
+            plant={{
+              ...plant,
+              name: plant.name.toUpperCase(),
+            }}
+          />
+        ))}
+      </ul>
 
     </main>
   );
