@@ -22,9 +22,9 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
   return (
     <li className="card">
       <h2>{plant.name}</h2>
-      <p><strong>Species:</strong> {plant.species}</p>
-      <p><strong>Light:</strong> {plant.light}</p>
-      <p><strong>Water:</strong> {plant.water}</p>
+      <p>{plant.species}</p>
+      <p>{plant.light}</p>
+      <p>{plant.water}</p>
     </li>
   );
 };

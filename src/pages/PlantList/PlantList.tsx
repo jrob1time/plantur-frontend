@@ -36,7 +36,6 @@ const PlantList: React.FC<{ plants: Plant[] }> = ({ plants }) => {
           />
         ))}
       </ul>
-
     </main>
   );
 };
