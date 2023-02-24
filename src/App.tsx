@@ -46,6 +46,12 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
+  const handleAddPlant = async (data: any): Promise<void> => {
+    const newPlant: Plant = await plantService.create(data);
+    setPlants([newPlant, ...plants]);
+    navigate('/plants');
+  };
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -54,6 +60,7 @@ function App(): JSX.Element {
         <Route path='/plants' element={
           <PlantList
             plants={plants}
+            handleAddPlant={handleAddPlant}
           />
         } />
         <Route
