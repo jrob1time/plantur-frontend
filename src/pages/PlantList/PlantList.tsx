@@ -1,7 +1,6 @@
 import React from 'react';
 import PlantCard from '../../components/PlantCard/PlantCard'
 
-
 interface Plant {
   name: string;
   species: string;
@@ -30,6 +29,7 @@ const PlantList: React.FC<{ plants: Plant[] }> = ({ plants }) => {
       <ul>
       {plants.map((plant) => (
         <PlantCard
+          key={plant.name}
           plant={plant}
         />
       ))}

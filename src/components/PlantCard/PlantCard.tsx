@@ -1,12 +1,10 @@
 import React from 'react';
 
-interface PlantCardProps {
-  plant: {
-    name: string;
-    species: string;
-    light: string;
-    water: Water;
-  };
+interface Plant {
+  name: string;
+  species: string;
+  light: string;
+  water: Water.OTHER;
 }
 
 enum Water {
@@ -16,15 +14,17 @@ enum Water {
   OTHER = 'Moderate'
 }
 
-const PlantCard: React.FC<PlantCardProps> = ({ plant }) => {
+interface Props {
+  plant: Plant;
+}
+
+const PlantCard: React.FC<Props> = ({ plant }) => {
   return (
-    <li>
-      <section>
-        <button>
-          X
-        </button>
-      </section>
-      <h2>{plant.name.toUpperCase()}</h2>
+    <li className="card">
+      <h2>{plant.name}</h2>
+      <p><strong>Species:</strong> {plant.species}</p>
+      <p><strong>Light:</strong> {plant.light}</p>
+      <p><strong>Water:</strong> {plant.water}</p>
     </li>
   );
 };

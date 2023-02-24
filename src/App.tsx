@@ -59,7 +59,8 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route path='/plants' element={<PlantList plants={plants}/>} />
-        <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />} />
+        <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />}
+        />
         <Route
           path="/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
