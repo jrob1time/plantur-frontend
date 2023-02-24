@@ -53,12 +53,19 @@ function App(): JSX.Element {
     navigate('/plants/new');
   };
 
+  const handleDeletePlant = async (id: string): Promise<void> => {
+    await plantService.delete(id);
+    const updatedPlants = plants.filter((plant) => plant._id !== id);
+    setPlants(updatedPlants);
+  };
+
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route path='/plants' element={<PlantList plants={plants}/>} />
+        <Route path='/plants' element={<PlantList plants={plants} handleDeletePlant={handleDeletePlant} />} />
         <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />}
         />
         <Route

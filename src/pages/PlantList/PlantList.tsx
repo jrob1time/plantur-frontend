@@ -2,6 +2,7 @@ import React from 'react';
 import PlantCard from '../../components/PlantCard/PlantCard'
 
 interface Plant {
+  _id: string;
   name: string;
   species: string;
   light: string;
@@ -15,29 +16,31 @@ enum Water {
   OTHER = 'Moderate'
 }
 
-interface Props {
-  plant: Plant;
+interface PlantListProps {
+  plants: Plant[];
+  handleDeletePlant: (_id: string) => Promise<void>;
 }
 
-const PlantList: React.FC<{ plants: Plant[] }> = ({ plants }) => {
+function PlantList({ plants, handleDeletePlant }: PlantListProps): JSX.Element {
+  const handleDelete = async (_id: string): Promise<void> => {
+    await handleDeletePlant(_id);
+  };
+
   return (
-    <main className="list">
-      <h1>PLANT LIST</h1>
-
-      {!plants.length && <h2>Oops! No plants here!</h2>}
-
-      <ul>
-        {plants.map((plant) => (
-          <PlantCard
-            plant={{
-              ...plant,
-              name: plant.name.toUpperCase(),
-            }}
-          />
-        ))}
-      </ul>
-    </main>
+    <div>
+      <h1>Plant List</h1>
+      {plants.map((plant) => (
+        <div key={plant._id}>
+          <h2>{plant.name}</h2>
+          <p>{plant.species}</p>
+          <p>{plant.light}</p>
+          <p>{plant.water}</p>
+          <button onClick={() => handleDeletePlant(plant._id)}>Delete</button>
+        </div>
+      ))}
+    </div>
   );
-};
+}
+
 
 export default PlantList;
