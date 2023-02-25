@@ -11,6 +11,8 @@ interface NavBarProps {
 
 const NavBar = (props: NavBarProps): JSX.Element => {
   const { user, handleLogout } = props
+
+ 
   
   return (
     <nav>
@@ -20,7 +22,6 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <li><NavLink to="/plants">Plant List</NavLink></li>
           <li><NavLink to="/plants/new">New Plant</NavLink></li>
           <li><NavLink to="/change-password">Change Password</NavLink></li>
-          <li><NavLink to="/plants">Delete Account</NavLink></li>
           <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
         </ul>
       :

@@ -15,6 +15,7 @@ import NewPlant from './pages/NewPlant/NewPlant'
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
+
 // services
 import * as authService from './services/authService'
 import * as plantService from './services/plantService';
@@ -58,7 +59,10 @@ function App(): JSX.Element {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+      <Route 
+          path="/" 
+          element={<Landing user={user} handleLogout={handleLogout} />}
+        />
         <Route path='/plants' element={<PlantList plants={plants} />} />
         <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />}
         />

@@ -1,6 +1,9 @@
 import React from 'react';
 import PlantCard from '../../components/PlantCard/PlantCard';
 
+// services
+import * as authService from '../../services/authService'
+
 enum Water {
   LIGHT = 'Light',
   MODERATE = 'Moderate',
@@ -20,6 +23,8 @@ interface PlantListProps {
   plants: Plant[];
 }
 
+
+
 const PlantList: React.FC<PlantListProps> = ({ plants }) => {
   return (
     <div>
@@ -35,5 +40,6 @@ const PlantList: React.FC<PlantListProps> = ({ plants }) => {
     </div>
   );
 };
+
 
 export default PlantList;
