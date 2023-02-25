@@ -17,15 +17,7 @@ async function create(formData: any): Promise<any> {
 }
 
 
-async function deletePlant(id: string): Promise<any> {
-  const res: Response = await fetch(`${BASE_URL}/${id}`, {
-    method: 'DELETE',
-  });
-  return res.json();
-}
-
 export {
   index,
   create,
-  deletePlant as delete,
 }
