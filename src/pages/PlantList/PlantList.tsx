@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PlantCard from '../../components/PlantCard/PlantCard';
+import EditPlantCard from '../../components/EditPlant/EditPlant';
 
 // services
 import * as authService from '../../services/authService'
@@ -26,17 +27,27 @@ interface PlantListProps {
 
 
 const PlantList: React.FC<PlantListProps> = ({ plants }) => {
+  
+  const [form, setForm] = useState<number>(-1)
+  const handleEditPlant = (evt: React.FormEvent<HTMLFormElement>, plantId:number) => {
+    evt.preventDefault()
+    setForm(plantId)
+  }
+  
+
   return (
     <div>
       <h1>PLANT LIST</h1>
-      {plants.map((plant) => (
+      console.log{form};
+      
+      {plants.map((plant, idx) => idx===form? <EditPlantCard plant={plant}/>: (
         <div key={plant._id}>
           
           <h2>NAME: {plant.name}</h2>
           <p>SPECIES: {plant.species}</p>
           <p>LIGHT NEEDED: {plant.light}</p>
           <p> WATER NEEDED: {plant.water}</p>
-          <button>Edit Plant</button>
+          <button onClick={(evt: React.FormEvent<HTMLFormElement>) => handleEditPlant(evt, idx)}>Edit Plant </button>
         </div>
       ))}
     </div>
