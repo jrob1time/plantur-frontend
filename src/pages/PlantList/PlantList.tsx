@@ -32,10 +32,10 @@ const PlantList: React.FC<PlantListProps> = ({ plants }) => {
       {plants.map((plant) => (
         <div key={plant._id}>
           
-          <h2>{plant.name}</h2>
-          <p>{plant.species}</p>
-          <p>{plant.light}</p>
-          <p>{plant.water}</p>
+          <h2>NAME: {plant.name}</h2>
+          <p>SPECIES: {plant.species}</p>
+          <p>LIGHT NEEDED: {plant.light}</p>
+          <p> WATER NEEDED: {plant.water}</p>
           <button>Edit Plant</button>
         </div>
       ))}
