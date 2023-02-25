@@ -26,6 +26,7 @@ const PlantCard: React.FC<Props> = ({ plant }) => {
       <p>{plant.light}</p>
       <p>{plant.water}</p>
     </li>
+    
   );
 };
 

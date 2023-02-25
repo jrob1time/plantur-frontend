@@ -31,10 +31,12 @@ const PlantList: React.FC<PlantListProps> = ({ plants }) => {
       <h1>PLANT LIST</h1>
       {plants.map((plant) => (
         <div key={plant._id}>
+          
           <h2>{plant.name}</h2>
           <p>{plant.species}</p>
           <p>{plant.light}</p>
           <p>{plant.water}</p>
+          <button>Edit Plant</button>
         </div>
       ))}
     </div>

@@ -13,9 +13,6 @@ interface LandingProps {
 }
 
 const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
-  // Remove the line below because `user` is already declared as a parameter in LandingProps
-  // const { user } = props
-
   const handleDeleteAccount = async (): Promise<void> => {
     await authService.deleteAccount();
     handleLogout();
