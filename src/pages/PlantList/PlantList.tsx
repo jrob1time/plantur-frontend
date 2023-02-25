@@ -38,7 +38,6 @@ const PlantList: React.FC<PlantListProps> = ({ plants }) => {
   return (
     <div>
       <h1>PLANT LIST</h1>
-      console.log{form};
       
       {plants.map((plant, idx) => idx===form? <EditPlantCard plant={plant}/>: (
         <div key={plant._id}>

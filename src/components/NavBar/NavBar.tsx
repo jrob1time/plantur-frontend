@@ -19,6 +19,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
+          <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/plants">Plant List</NavLink></li>
           <li><NavLink to="/plants/new">New Plant</NavLink></li>
           <li><NavLink to="/change-password">Change Password</NavLink></li>
