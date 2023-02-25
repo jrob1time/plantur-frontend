@@ -28,11 +28,12 @@ function App(): JSX.Element {
 
   const [plants, setPlants] = useState<Plant[]>([]);
 
+  const fetchPlants = async () => {
+    const data = await plantService.index();
+    setPlants(data);
+  };
+
   useEffect(() => {
-    const fetchPlants = async () => {
-      const data = await plantService.index();
-      setPlants(data);
-    };
     fetchPlants();
   }, []);
 
@@ -63,7 +64,7 @@ function App(): JSX.Element {
           path="/" 
           element={<Landing user={user} handleLogout={handleLogout} />}
         />
-        <Route path='/plants' element={<PlantList plants={plants} />} />
+        <Route path='/plants' element={<PlantList fetchPlants={fetchPlants} plants={plants} />} />
         <Route path='/plants/new' element={<NewPlant handleAddPlant={handleAddPlant} />}
         />
         <Route

@@ -16,9 +16,10 @@ enum Water {
 
 interface Props {
   plant: Plant;
+  handleUpdatePlant: (plant: Plant) => void
 }
 
-const EditPlantCard: React.FC<Props> = ({ plant }) => {
+const EditPlantCard: React.FC<Props> = ({ plant, handleUpdatePlant }) => {
   const [form, setForm] = useState<Plant>(plant)
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -31,7 +32,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
 
 const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
   evt.preventDefault()
-  props.handleAddPlant(form)
+ handleUpdatePlant(form)
   setForm({
     name: '',
     species: '',

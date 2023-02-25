@@ -16,8 +16,8 @@ async function create(formData: any): Promise<any> {
   return res.json();
 }
 
-async function update(formData: any): Promise<any> {
-  const res: Response = await fetch(BASE_URL, {
+async function update(formData: any, idx:number): Promise<any> {
+  const res: Response = await fetch(BASE_URL + '/' + idx, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
