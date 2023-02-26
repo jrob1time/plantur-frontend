@@ -1,4 +1,5 @@
-import './NewPlant.css'
+import styles from './NewPlant.module.css'
+
 import { useState } from "react"
 
 interface NewPlantProps {
@@ -40,7 +41,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
   }
 
   return (
-    <main className ="new">
+    <main className={`${styles.container} new`}>
       <h1>NEW PLANT</h1>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
