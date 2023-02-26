@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom'
 // types
 import { User } from '../../types/models'
 
+import logo from '../../assets/logo.svg'
+
+
 interface NavBarProps {
   user: User | null;
   handleLogout: () => void;
@@ -15,7 +18,10 @@ const NavBar = (props: NavBarProps): JSX.Element => {
  
   
   return (
-    <nav>
+     <nav>
+      <NavLink to="/">
+        <img src={logo} alt="Plantur" />
+      </NavLink>
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>

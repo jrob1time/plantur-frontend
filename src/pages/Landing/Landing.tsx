@@ -7,6 +7,8 @@ import { User } from '../../types/models'
 // services
 import * as authService from '../../services/authService'
 
+import logo1 from '../../assets/logo1.png'
+
 interface LandingProps {
   user: User | null;
   handleLogout: () => void;
@@ -20,9 +22,8 @@ const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      <h1>Green Fingers To The Rescue</h1>
       <h1>
-        Bye, <br /> Bud
+        <img src={logo1} alt="Plantur" />
       </h1>
 
       {user && (
