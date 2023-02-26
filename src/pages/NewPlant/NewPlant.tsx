@@ -40,7 +40,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
   }
 
   return (
-    <main className="new">
+    <main className ="new">
       <h1>NEW PLANT</h1>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>

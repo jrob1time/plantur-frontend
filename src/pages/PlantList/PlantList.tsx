@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import EditPlantCard from '../../components/EditPlant/EditPlant';
 
-
 // services
 import * as plantService from '../../services/plantService'
+
+import styles from './PlantList.module.css'
 
 enum Water {
   LIGHT = 'Light',
@@ -43,20 +44,22 @@ const PlantList: React.FC<PlantListProps> = ({ plants, fetchPlants }) => {
   
 
   return (
-    <div>
-      <h1>PLANT LIST</h1>
-      
+
+    <main className={styles.container}>
+
       {plants.map((plant) => plant.id===form? <EditPlantCard handleUpdatePlant={handleUpdatePlant} plant={plant}/>: (
+
         <div key={plant.id}>
-          
           <h2>{plant.name}</h2>
           <p>SPECIES: {plant.species}</p>
           <p>LIGHT NEEDED: {plant.light}</p>
           <p> WATER NEEDED: {plant.water}</p>
           <button onClick={(evt: React.FormEvent<HTMLFormElement>) => handleEditPlant(evt, plant.id)}>Edit Plant </button>
         </div>
+
       ))}
-    </div>
+
+    </main>
   );
 };
 
