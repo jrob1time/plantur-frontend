@@ -43,6 +43,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
   return (
     <main className={`${styles.container} new`}>
       <h1>NEW PLANT</h1>
+      <div>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input
@@ -92,6 +93,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
 
         <button type="submit">SUBMIT</button>
       </form>
+      </div>
     </main>
   )
 }
