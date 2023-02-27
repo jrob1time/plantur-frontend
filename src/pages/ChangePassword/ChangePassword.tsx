@@ -1,11 +1,11 @@
 // npm modules
-import { useState } from 'react'
+import { useState } from "react";
 
 // components
-import ChangePasswordForm from '../../components/ChangePasswordForm/ChangePasswordForm'
+import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
 
 // stylesheets
-import styles from './ChangePassword.module.css'
+import styles from "./ChangePassword.module.css";
 
 // types
 interface ChangePasswordProps {
@@ -13,19 +13,19 @@ interface ChangePasswordProps {
 }
 
 const ChangePassword = (props: ChangePasswordProps): JSX.Element => {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
 
-  const updateMessage = (msg: string): void => setMessage(msg)
+  const updateMessage = (msg: string): void => setMessage(msg);
 
   return (
     <main className={styles.container}>
       <h1>Change Password</h1>
       <div>
-      <p>{message}</p>
-      <ChangePasswordForm {...props} updateMessage={updateMessage} />
+        <p>{message}</p>
+        <ChangePasswordForm {...props} updateMessage={updateMessage} />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default ChangePassword
+export default ChangePassword;

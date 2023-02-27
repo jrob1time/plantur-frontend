@@ -12,10 +12,10 @@
   margin-right: auto;
 }
 
-.container button{
+.container button {
   margin-bottom: 50px;
   border-radius: 30px;
 }
 .container button:hover {
-  color:rgb(122, 228, 246);
+  color: rgb(122, 228, 246);
 }

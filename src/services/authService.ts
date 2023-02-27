@@ -1,107 +1,106 @@
 // services
-import * as tokenService from './tokenService'
-import { addPhoto as addProfilePhoto } from './profileService'
+import * as tokenService from "./tokenService";
+import { addPhoto as addProfilePhoto } from "./profileService";
 
 // types
-import { 
+import {
   ChangePasswordFormData,
   LoginFormData,
   SignupFormData,
-  PhotoFormData
-} from '../types/forms'
-import { User } from '../types/models'
+  PhotoFormData,
+} from "../types/forms";
+import { User } from "../types/models";
 
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/auth`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/auth`;
 
 async function signup(
-  formData: SignupFormData, 
-  photoFormData: PhotoFormData,
+  formData: SignupFormData,
+  photoFormData: PhotoFormData
 ): Promise<void> {
   try {
     const res = await fetch(`${BASE_URL}/signup`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    })
-    const json = await res.json()
+    });
+    const json = await res.json();
     if (json.err) {
-      throw new Error(json.err)
+      throw new Error(json.err);
     } else if (json.token) {
-      tokenService.setToken(json.token)
-      const user = tokenService.getUserFromToken()
+      tokenService.setToken(json.token);
+      const user = tokenService.getUserFromToken();
       if (photoFormData.photo && user) {
-        const photoData = new FormData()
-        photoData.append('photo', photoFormData.photo)
-        await addProfilePhoto(photoData, user.profile.id)
+        const photoData = new FormData();
+        photoData.append("photo", photoFormData.photo);
+        await addProfilePhoto(photoData, user.profile.id);
       }
     }
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 function getUser(): User | null {
-  return tokenService.getUserFromToken()
+  return tokenService.getUserFromToken();
 }
 
 function logout(): void {
-  tokenService.removeToken()
+  tokenService.removeToken();
 }
 
 async function login(formData: LoginFormData): Promise<void> {
   try {
     const res = await fetch(`${BASE_URL}/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
-    })
-    const json = await res.json()
+    });
+    const json = await res.json();
     if (json.token) {
-      tokenService.setToken(json.token)
+      tokenService.setToken(json.token);
     }
     if (json.err) {
-      throw new Error(json.err)
+      throw new Error(json.err);
     }
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 async function changePassword(formData: ChangePasswordFormData): Promise<void> {
   try {
     const res = await fetch(`${BASE_URL}/change-password`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${tokenService.getToken()}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${tokenService.getToken()}`,
       },
       body: JSON.stringify(formData),
-    })
-    const json = await res.json()
+    });
+    const json = await res.json();
     if (json.token) {
-      tokenService.removeToken()
-      tokenService.setToken(json.token)
+      tokenService.removeToken();
+      tokenService.setToken(json.token);
     }
     if (json.err) {
-      throw new Error(json.err)
+      throw new Error(json.err);
     }
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 async function deleteAccount(): Promise<void> {
   try {
     await fetch(`${BASE_URL}/delete`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-      }
-    })
+        Authorization: `Bearer ${tokenService.getToken()}`,
+      },
+    });
   } catch (err) {
-    throw err
+    throw err;
   }
 }
 
-
-export { signup, getUser, logout, login, changePassword, deleteAccount }
+export { signup, getUser, logout, login, changePassword, deleteAccount };

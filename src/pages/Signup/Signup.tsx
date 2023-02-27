@@ -1,11 +1,11 @@
 // npm packages
-import { useState } from 'react'
+import { useState } from "react";
 
 // components
-import SignupForm from '../../components/SignupForm/SignupForm'
+import SignupForm from "../../components/SignupForm/SignupForm";
 
 // stylesheets
-import styles from './Signup.module.css'
+import styles from "./Signup.module.css";
 
 // types
 interface SignupProps {
@@ -13,9 +13,9 @@ interface SignupProps {
 }
 
 const Signup = (props: SignupProps): JSX.Element => {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
 
-  const updateMessage = (msg: string): void => setMessage(msg)
+  const updateMessage = (msg: string): void => setMessage(msg);
 
   return (
     <main className={styles.container}>
@@ -23,7 +23,7 @@ const Signup = (props: SignupProps): JSX.Element => {
       <p>{message}</p>
       <SignupForm {...props} updateMessage={updateMessage} />
     </main>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

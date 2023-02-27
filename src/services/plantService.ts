@@ -7,29 +7,24 @@ async function index(): Promise<any> {
 
 async function create(formData: any): Promise<any> {
   const res: Response = await fetch(BASE_URL, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify(formData),
   });
   return res.json();
 }
 
-async function update(formData: any, idx:number): Promise<any> {
-  const res: Response = await fetch(BASE_URL + '/' + idx, {
-    method: 'PUT',
+async function update(formData: any, idx: number): Promise<any> {
+  const res: Response = await fetch(BASE_URL + "/" + idx, {
+    method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify(formData),
   });
   return res.json();
 }
 
-
-export {
-  index,
-  create,
-  update
-}
+export { index, create, update };

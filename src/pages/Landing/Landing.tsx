@@ -1,13 +1,13 @@
 // stylesheets
-import styles from './Landing.module.css'
+import styles from "./Landing.module.css";
 
 // types
-import { User } from '../../types/models'
+import { User } from "../../types/models";
 
 // services
-import * as authService from '../../services/authService'
+import * as authService from "../../services/authService";
 
-import logo1 from '../../assets/logo1.png'
+import logo1 from "../../assets/logo1.png";
 
 interface LandingProps {
   user: User | null;
@@ -25,10 +25,8 @@ const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
       <h1>
         <img src={logo1} alt="Plantur" />
       </h1>
-<h2>HELLO FELLOW PLANTUR!</h2>
-      {user && (
-        <button onClick={handleDeleteAccount}>DELETE ACCOUNT</button>
-      )}
+      <h2>HELLO FELLOW PLANTUR!</h2>
+      {user && <button onClick={handleDeleteAccount}>DELETE ACCOUNT</button>}
     </main>
   );
 };

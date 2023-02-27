@@ -5,7 +5,6 @@
   margin-top: 100px;
 }
 
-
 .container div {
   display: flex;
   flex-direction: column;
@@ -15,16 +14,20 @@
   padding: 8px 14px 14px;
   margin: 20px;
   height: 255px;
-  background: rgb(19,149,172);
-  background: linear-gradient(340deg, rgb(122, 228, 246) 0%, rgba(184,235,245,1) 80%);
+  background: rgb(19, 149, 172);
+  background: linear-gradient(
+    340deg,
+    rgb(122, 228, 246) 0%,
+    rgba(184, 235, 245, 1) 80%
+  );
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .container button {
- margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .container section {
- display: flex;
- flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
