@@ -25,7 +25,7 @@ const Landing = ({ user, handleLogout }: LandingProps): JSX.Element => {
       <h1>
         <img src={logo1} alt="Plantur" />
       </h1>
-
+<h2>HELLO FELLOW PLANTUR!</h2>
       {user && (
         <button onClick={handleDeleteAccount}>DELETE ACCOUNT</button>
       )}

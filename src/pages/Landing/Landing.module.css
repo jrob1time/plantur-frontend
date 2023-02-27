@@ -13,5 +13,9 @@
 }
 
 .container button{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+}
+.container button:hover {
+  color:rgb(122, 228, 246);
 }
