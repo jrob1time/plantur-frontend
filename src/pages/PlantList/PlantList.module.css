@@ -1,14 +1,21 @@
-
-
-
-main {
+.container h1 {
 display: flex;
-flex-wrap: wrap-reverse
+justify-content: center;
+margin-top: 100px;
+padding: 8px 14px 14px;
 }
 
-main > div {
+.container main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+}
+
+
+
+.container ul {
+  display: flex;
+  flex-wrap: wrap-reverse;
   align-items: center;
   align-content: center;
   justify-content: center;

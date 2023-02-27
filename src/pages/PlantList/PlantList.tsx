@@ -46,19 +46,18 @@ const PlantList: React.FC<PlantListProps> = ({ plants, fetchPlants }) => {
   return (
 
     <main className={styles.container}>
-
+<h1>PLANT LIST</h1>
       {plants.map((plant) => plant.id===form? <EditPlantCard handleUpdatePlant={handleUpdatePlant} plant={plant}/>: (
-
-        <div key={plant.id}>
-          <h2>{plant.name}</h2>
-          <p>SPECIES: {plant.species}</p>
-          <p>LIGHT NEEDED: {plant.light}</p>
-          <p> WATER NEEDED: {plant.water}</p>
-          <button onClick={(evt: React.FormEvent<HTMLFormElement>) => handleEditPlant(evt, plant.id)}>Edit Plant </button>
-        </div>
-
-      ))}
-
+<ul>
+  <div key={plant.id}>
+    <h2>{plant.name}</h2>
+    <p>SPECIES: {plant.species}</p>
+    <p>LIGHT NEEDED: {plant.light}</p>
+    <p> WATER NEEDED: {plant.water}</p>
+    <button onClick={(evt: React.FormEvent<HTMLFormElement>) => handleEditPlant(evt, plant.id)}>Edit Plant </button>
+  </div>
+</ul>
+))}
     </main>
   );
 };
