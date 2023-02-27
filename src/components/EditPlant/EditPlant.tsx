@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import styles from './EditPlant.module.css'
+
+
 interface Plant {
   name: string;
   species: string;
@@ -42,7 +45,7 @@ const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
 }
 
 return (
-  <main className="new">
+  <main className={`${styles.container} new`}>
     <h1>EDIT PLANT</h1>
     <form autoComplete="off" onSubmit={handleSubmit}>
       <label htmlFor="name-input">Name</label>
