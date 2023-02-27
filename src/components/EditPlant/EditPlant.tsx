@@ -46,8 +46,8 @@ const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
 
 return (
   <main className={`${styles.container} new`}>
-    <h1>EDIT PLANT</h1>
     <form autoComplete="off" onSubmit={handleSubmit}>
+    <h1>EDIT PLANT</h1>
       <label htmlFor="name-input">Name</label>
       <input
         required

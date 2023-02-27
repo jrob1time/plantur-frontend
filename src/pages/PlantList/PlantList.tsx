@@ -50,7 +50,7 @@ const PlantList: React.FC<PlantListProps> = ({ plants, fetchPlants }) => {
       {plants.map((plant) => plant.id===form? <EditPlantCard handleUpdatePlant={handleUpdatePlant} plant={plant}/>: (
 
   <div key={plant.id}>
-    <h2>{plant.name}</h2>
+   <h2>{plant.name.toUpperCase()}</h2>
     <p>SPECIES: {plant.species}</p>
     <p>LIGHT NEEDED: {plant.light}</p>
     <p> WATER NEEDED: {plant.water}</p>
