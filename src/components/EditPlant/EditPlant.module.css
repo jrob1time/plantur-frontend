@@ -7,7 +7,6 @@
   border-radius: 30px;
   margin: 70px;
   padding: 8px 14px 14px;
-  max-width: 400px;
 }
 
 .container button {
@@ -24,5 +23,5 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin-left: 320px;
+  align-items: center;
 }

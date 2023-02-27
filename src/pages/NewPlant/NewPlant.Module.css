@@ -16,8 +16,8 @@
 .container form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin-left: 290px;
+  justify-content: center;
+  align-content: center;
 }
 
 .container button {
