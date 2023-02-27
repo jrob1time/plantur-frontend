@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { User } from '../../types/models'
 
 import logo from '../../assets/logo.svg'
+import styles from './NavBar.module.css'
 
 
 interface NavBarProps {
@@ -18,6 +19,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
  
   
   return (
+    <main className={styles.container}>
      <nav>
       <NavLink to="/">
         <img src={logo} alt="Plantur" />
@@ -38,6 +40,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
         </ul>
       }
     </nav>
+  </main>
   )
 }
 

@@ -1,0 +1,47 @@
+.container nav {
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: fixed;
+  padding: 12px 20px;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.container nav img {
+  width: 50px;
+}
+
+.container nav ul {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container nav li {
+  margin-left: 35px;
+  text-align: right;
+}
+
+@media only screen and (max-width: 414px) {
+  nav ul {
+    padding-left: 0px;
+  }
+
+  .container nav li {
+    font-size: 15px;
+  }
+}
+
+.container a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
