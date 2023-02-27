@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 100px;
 }
+
 
 .container div {
   display: flex;
@@ -14,14 +16,14 @@
   padding: 8px 14px 14px;
   margin: 20px;
   height: 255px;
+  max-width: 500px;
 }
 
 .container button {
  margin-bottom: 20px;
 }
 
-.container {
+.container section {
   display: flex;
-  flex-flow: column;
-  margin-top: 100px;
+  flex-direction: column;
 }
