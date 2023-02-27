@@ -1,7 +1,35 @@
 
 .container h1 {
   display: flex;
-  margin-top: 100px;
-  padding: 8px 14px 14px;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 150px;
   }
 
+.container div {
+  border: 2px solid rgb(0, 0, 0);
+  margin: 40px;
+  padding: 70px;
+  border-radius: 30px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center
+}
+
+.container button {
+  margin-top: 20px;
+}
+
+.container label {
+  margin-top: 20px;
+}
+
+.container input {
+  margin-top: 5px;
+}
