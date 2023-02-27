@@ -45,7 +45,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
   };
 
   return (
-    <main className={styles.container}>
+    <main>
       <h1>NEW PLANT</h1>
       <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
