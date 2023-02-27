@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./EditPlant.module.css";
 
 interface Plant {
+  id: string;
   name: string;
   species: string;
   light: string;
@@ -38,10 +39,11 @@ const EditPlantCard: React.FC<Props> = ({ plant, handleUpdatePlant }) => {
     evt.preventDefault();
     handleUpdatePlant(form);
     setForm({
+      id: plant.id,
       name: "",
       species: "",
       light: "",
-      water: "Moderate",
+      water: Water.OTHER,
     });
   };
 
@@ -49,6 +51,7 @@ const EditPlantCard: React.FC<Props> = ({ plant, handleUpdatePlant }) => {
     <main className={`${styles.container} new`}>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <h1>EDIT PLANT</h1>
+
         <label htmlFor="name-input">Name</label>
         <input
           required

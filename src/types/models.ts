@@ -1,7 +1,7 @@
 /* ---------===== custom props ====--------- */
 
 export interface Plant {
-  _id: string;
+  id: string;
   name: string;
   species: string;
   light: string;
