@@ -2,32 +2,26 @@
 .container h1 {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  padding: 8px 14px 14px;
+  margin-top: 450px;
   }
 
-.container div {
-  border: 2px solid rgb(0, 0, 0);
-  margin: 40px;
-  padding: 70px;
-  border-radius: 30px;
-}
 
 .container form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 40px;
+  align-items: center;
   align-content: center;
 }
 
-.container button {
-  margin-top: 20px;
-}
-
 .container label {
-  margin-top: 20px;
+  margin: 5px;
 }
 
 .container input {
-  margin-top: 5px;
+  margin: 5px;
+}
+
+.container button {
+  margin: 5px;
 }
