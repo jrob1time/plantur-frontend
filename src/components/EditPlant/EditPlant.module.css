@@ -1,9 +1,6 @@
 .container form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  border: 2px solid rgb(0, 0, 0);
   border-radius: 30px;
   margin: 70px;
   padding: 8px 14px 14px;
