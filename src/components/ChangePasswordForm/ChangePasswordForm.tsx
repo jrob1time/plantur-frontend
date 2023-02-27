@@ -47,6 +47,7 @@ const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
   }
 
   return (
+    <main className={styles.container}>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
@@ -97,6 +98,7 @@ const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
         </Link>
       </div>
     </form>
+    </main>
   )
 }
 
