@@ -16,7 +16,6 @@
   padding: 8px 14px 14px;
   margin: 20px;
   height: 255px;
-  max-width: 500px;
 }
 
 .container button {
@@ -24,6 +23,6 @@
 }
 
 .container section {
-  display: flex;
-  flex-direction: column;
+ display: flex;
+ flex-direction: column-reverse;
 }
