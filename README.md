@@ -1,4 +1,4 @@
-# Genre Stash App!
+# Plantur App!
 
 <img src="./src/assets/readme.png">
 
