@@ -19,6 +19,9 @@ The "PLANTUR" was created with any plant or plant/wannabe plant lover in mind. T
 - Sequelize
 - Netlify
 
+## Credits & Attributions 🙏
+
+I am very proud of this design because everything was created by me!
 
 ## Recent Changes 👏
 
