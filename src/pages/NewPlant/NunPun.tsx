@@ -1,6 +1,6 @@
 
 
-import styles from "./NewPlant.module.css"
+import style from './NunPun.module.css'
 
 import { useState } from "react";
 

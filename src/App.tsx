@@ -9,7 +9,7 @@ import Landing from "./pages/Landing/Landing";
 import Profiles from "./pages/Profiles/Profiles";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import PlantList from "./pages/PlantList/PlantList";
-import NewPlant from "./pages/NewPlant/NewPlant";
+import NewPlant from "./pages/NewPlant/NunPun";
 
 // components
 import NavBar from "./components/NavBar/NavBar";
