@@ -1,6 +1,6 @@
 
 
-import style from './NunPun.module.css'
+import styles from "./NewPlant.module.css";
 
 import { useState } from "react";
 
@@ -45,7 +45,7 @@ const NewPlant: React.FC<NewPlantProps> = (props) => {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
       <h1>NEW PLANT</h1>
       <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
